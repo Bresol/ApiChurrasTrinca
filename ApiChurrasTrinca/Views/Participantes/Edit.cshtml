@@ -1,0 +1,44 @@
+﻿@model ApiChurrasTrinca.Data.Participante
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Participante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorDeContribuicao" class="control-label"></label>
+                <input asp-for="ValorDeContribuicao" class="form-control" />
+                <span asp-validation-for="ValorDeContribuicao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdChurrasco" class="control-label"></label>
+                <input asp-for="IdChurrasco" class="form-control" />
+                <span asp-validation-for="IdChurrasco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
